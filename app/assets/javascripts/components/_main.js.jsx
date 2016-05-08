@@ -1,6 +1,6 @@
 var Main = React.createClass({
   getInitialState(){
-    return {user: {}, message: ""};
+    return {user: this.props.user, message: this.props.message};
   },
 
   componentWillMount(){
