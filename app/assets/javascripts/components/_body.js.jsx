@@ -9,7 +9,7 @@ var Body = React.createClass({
 
   loggedIn(){
     if(this.props.user){
-      return <button>Logout</button>;
+      return <RachioDashboard logout={this.props.logout}/>;
     } else {
       return <Login login={this.props.login} setBodyState={this.setBodyState}/>;
     }

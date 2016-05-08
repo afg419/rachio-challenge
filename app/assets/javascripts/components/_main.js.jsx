@@ -7,6 +7,10 @@ var Main = React.createClass({
 
   },
 
+  logout(){
+    this.setState({user: undefined, message: "Logged out"});
+  },
+
   login(user){
     if(user.username){
       this.setState({user: {username: user.username}, message: "Logged in as " + user.username});
@@ -19,7 +23,7 @@ var Main = React.createClass({
     return (
       <div>
         <Header message={this.state.message}/>
-        <Body login={this.login} user={this.state.user}/>
+        <Body logout={this.logout} login={this.login} user={this.state.user}/>
       </div>
     );
   }

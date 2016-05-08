@@ -9,4 +9,10 @@ class Api::V1::SessionsController < ApplicationController
       render json: "No user with given username and password found"
     end
   end
+
+  def destroy
+    session[:user_id] = nil
+    response.status = 204
+    render json: ""
+  end
 end
