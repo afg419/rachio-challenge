@@ -16,9 +16,9 @@ RSpec.describe Api::V1::SessionsController, type: :controller do
     user_params = {user: {username: "user1", password: "password1", api_key: "1111"}}
 
     post :create, user_params
-    reply = JSON.parse(response.body)
+    reply = response.body
 
-    expect(reply["error"]).to eq "No user with given username and password found"
+    expect(reply).to eq "No user with given username and password found"
     expect(response.status).to eq 400
   end
 end

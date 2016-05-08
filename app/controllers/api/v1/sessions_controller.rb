@@ -6,7 +6,7 @@ class Api::V1::SessionsController < ApplicationController
       render json: {user: {username: user.username}}
     else
       response.status = 400
-      render json: {error: "No user with given username and password found"}
+      render json: "No user with given username and password found"
     end
   end
 end

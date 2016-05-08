@@ -1,19 +1,24 @@
 var Body = React.createClass({
   getInitialState(){
-    return {};
+    return {message: ""};
+  },
+
+  setBodyState(state){
+    this.setState(state);
   },
 
   loggedIn(){
-    if(this.state.user){
-      return "Hey";
+    if(this.props.user.username){
+      return <button>Logout</button>;
     } else {
-      return <Login loginDOM={this.props.login}/>;
+      return <Login login={this.props.login} setBodyState={this.setBodyState}/>;
     }
   },
 
   render() {
     return (
       <div>
+        {this.state.message}
         {this.loggedIn()}
       </div>
     );

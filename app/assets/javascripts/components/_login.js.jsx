@@ -6,11 +6,11 @@ var Login = React.createClass({
       url: '/api/v1/login',
       type: 'POST',
       data: { user: { username: username, password: password } },
-      success: (user) => {
-        this.props.login(user);
+      success: (reply) => {
+        this.props.login(reply.user);
       },
       error: (reply) => {
-        console.log(reply.responseText);
+        this.props.login(reply);
       }
     });
   },
