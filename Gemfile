@@ -11,6 +11,7 @@ gem 'figaro'
 gem 'pg'
 gem 'thin'
 gem 'rails_12factor', group: :production
+
 group :development, :test do
   gem 'byebug'
   gem 'mocha'
