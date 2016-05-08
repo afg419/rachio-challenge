@@ -10,7 +10,9 @@ gem 'bcrypt', '~> 3.1.7'
 gem 'figaro'
 gem 'pg'
 gem 'thin'
+gem 'react-rails'
 gem 'rails_12factor', group: :production
+
 group :development, :test do
   gem 'byebug'
   gem 'mocha'
