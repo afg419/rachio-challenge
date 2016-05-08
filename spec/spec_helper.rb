@@ -20,6 +20,15 @@ RSpec.configure do |config|
   # rspec-expectations config goes here. You can use an alternate
   # assertion/expectation library such as wrong or the stdlib/minitest
   # assertions if you prefer.
+  def login(username, password)
+    User.create(username: username, password: password)
+
+    visit root_path
+    fill_in("username", with: username)
+    fill_in("password", with: password)
+    click_on "Login"
+  end
+
   config.expect_with :rspec do |expectations|
     # This option will default to `true` in RSpec 4. It makes the `description`
     # and `failure_message` of custom matchers include text for helper methods
