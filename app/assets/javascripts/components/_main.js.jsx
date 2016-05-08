@@ -1,9 +1,13 @@
 var Main = React.createClass({
+  loginDOM(){
+
+  },
+
   render() {
     return (
       <div>
         <Header />
-        <Body />
+        <Body loginDOM={this.loginDOM}/>
       </div>
     );
   }

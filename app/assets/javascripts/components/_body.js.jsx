@@ -7,7 +7,7 @@ var Body = React.createClass({
     if(this.state.user){
       return "Hey";
     } else {
-      return <Login />;
+      return <Login loginDOM={this.props.login}/>;
     }
   },
 
