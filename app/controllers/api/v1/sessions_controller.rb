@@ -4,7 +4,9 @@ class Api::V1::SessionsController < ApplicationController
     if user && user.authenticate(params[:user][:password])
       session[:user_id] = user.id
       render json: {user: {username: user.username}}
+    else
+      response.status = 400
+      render json: {error: "No user with given username and password found"}
     end
-    render json: {error: "No user with given username and password found"}
   end
 end
