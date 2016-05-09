@@ -1,6 +1,6 @@
 class Device < ActiveRecord::Base
   belongs_to :user
-  has_many :zones
+  has_many :zones, dependent: :destroy
 
   def dom_format
     dom_zones = zones.map do |zone|

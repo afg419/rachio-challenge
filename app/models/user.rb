@@ -1,7 +1,7 @@
 class User < ActiveRecord::Base
   include DeviceLoader
   has_secure_password
-  has_many :devices
+  has_many :devices, dependent: :destroy
 
   def get_or_update_devices(rachio_api_service)
     if rachio_api_service.legal_api_key?

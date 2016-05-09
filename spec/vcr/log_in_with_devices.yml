@@ -1,0 +1,137 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://api.rach.io/1/public/person/info
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Authorization:
+      - Bearer c3667b81-92a6-4913-b83c-64cc713cbc1e
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+      User-Agent:
+      - Ruby
+      Host:
+      - api.rach.io
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Cache-Control:
+      - no-cache, no-store, max-age=0, must-revalidate
+      Content-Type:
+      - application/json
+      Date:
+      - Mon, 09 May 2016 22:12:56 GMT
+      Expires:
+      - '0'
+      Pragma:
+      - no-cache
+      Server:
+      - Apache-Coyote/1.1
+      Strict-Transport-Security:
+      - max-age=31536000 ; includeSubDomains
+      X-Content-Type-Options:
+      - nosniff
+      X-Frame-Options:
+      - DENY
+      X-Xss-Protection:
+      - 1; mode=block
+      Content-Length:
+      - '45'
+      Connection:
+      - keep-alive
+    body:
+      encoding: UTF-8
+      string: '{"id":"61b28ce9-7bc1-47cc-9b85-98b6bebf8951"}'
+    http_version: 
+  recorded_at: Mon, 09 May 2016 22:12:57 GMT
+- request:
+    method: get
+    uri: https://api.rach.io/1/public/person/61b28ce9-7bc1-47cc-9b85-98b6bebf8951
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Authorization:
+      - Bearer c3667b81-92a6-4913-b83c-64cc713cbc1e
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+      User-Agent:
+      - Ruby
+      Host:
+      - api.rach.io
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Cache-Control:
+      - no-cache, no-store, max-age=0, must-revalidate
+      Content-Type:
+      - application/json
+      Date:
+      - Mon, 09 May 2016 22:12:57 GMT
+      Expires:
+      - '0'
+      Pragma:
+      - no-cache
+      Server:
+      - Apache-Coyote/1.1
+      Strict-Transport-Security:
+      - max-age=31536000 ; includeSubDomains
+      X-Content-Type-Options:
+      - nosniff
+      X-Frame-Options:
+      - DENY
+      X-Xss-Protection:
+      - 1; mode=block
+      Content-Length:
+      - '13870'
+      Connection:
+      - keep-alive
+    body:
+      encoding: UTF-8
+      string: '{"id":"61b28ce9-7bc1-47cc-9b85-98b6bebf8951","username":"rachiobeta","fullName":"Rachio
+        Beta","email":"beta@rach.io","devices":[{"id":"c761bfa0-4c49-4b4f-8a79-04e42bea881a","status":"ONLINE","zones":[{"id":"18a7b4a0-0b46-4096-aefe-569d48954cef","zoneNumber":7,"name":"Zone
+        7","enabled":true,"customNozzle":{"name":"Fixed Spray Head","imageUrl":"https://s3-us-west-2.amazonaws.com/rachio-api-icons/nozzle/fixed_spray.png","category":"FIXED_SPRAY_HEAD","inchesPerHour":1.5},"customSoil":{"createDate":1441831272323,"lastUpdateDate":1441831272323,"id":"1f9240e5-ba87-4b88-b828-a5f456f399b7","name":"Loam","imageUrl":"https://s3-us-west-2.amazonaws.com/rachio-api-icons/soil/loam.png","category":"LOAM","infiltrationRate":0.35,"editable":false,"percentAvailableWater":0.7},"customSlope":{"name":"Flat","imageUrl":"https://s3-us-west-2.amazonaws.com/rachio-api-icons/slope/flat.png","variance":"ZERO_THREE","sortOrder":0},"customCrop":{"name":"Warm
+        Season Grass","imageUrl":"https://s3-us-west-2.amazonaws.com/rachio-api-icons/crop/warm_season_grass.png","coefficient":0.65},"customShade":{"name":"Lots
+        of sun","description":"6-8 hours of sun","imageUrl":"https://s3-us-west-2.amazonaws.com/rachio-api-icons/shade/lots_of_sun.png","exposure":1.0},"availableWater":0.17,"rootZoneDepth":9.0,"managementAllowedDepletion":0.5,"efficiency":0.8,"yardAreaSquareFeet":1000,"lastWateredDuration":1861,"lastWateredDate":1462720910068,"scheduleDataModified":false,"fixedRuntime":0,"saturatedDepthOfWater":0.92,"depthOfWater":0.77,"maxRuntime":10800,"wateringAdjustmentRuntimes":{"1":3150,"2":2625,"3":2100,"4":1575,"5":1050},"runtime":2100},{"id":"b709ec48-8b6e-44c9-937d-1c1c82376fd2","zoneNumber":4,"name":"Zone
+        4","enabled":true,"customNozzle":{"name":"Emitter","imageUrl":"https://s3-us-west-2.amazonaws.com/rachio-api-icons/nozzle/emitter.png","category":"EMITTER","inchesPerHour":0.5},"customSoil":{"createDate":1441831272323,"lastUpdateDate":1441831272323,"id":"1f9240e5-ba87-4b88-b828-a5f456f399b7","name":"Loam","imageUrl":"https://s3-us-west-2.amazonaws.com/rachio-api-icons/soil/loam.png","category":"LOAM","infiltrationRate":0.35,"editable":false,"percentAvailableWater":0.7},"customSlope":{"name":"Flat","imageUrl":"https://s3-us-west-2.amazonaws.com/rachio-api-icons/slope/flat.png","variance":"ZERO_THREE","sortOrder":0},"customCrop":{"name":"Cool
+        Season Grass","imageUrl":"https://s3-us-west-2.amazonaws.com/rachio-api-icons/crop/cool_season_grass.png","coefficient":0.7},"customShade":{"name":"Lots
+        of sun","description":"6-8 hours of sun","imageUrl":"https://s3-us-west-2.amazonaws.com/rachio-api-icons/shade/lots_of_sun.png","exposure":1.0},"availableWater":0.17,"rootZoneDepth":6.0,"managementAllowedDepletion":0.5,"efficiency":0.9,"yardAreaSquareFeet":1000,"lastWateredDuration":125,"lastWateredDate":1462805314345,"scheduleDataModified":false,"fixedRuntime":0,"saturatedDepthOfWater":0.61,"depthOfWater":0.51,"maxRuntime":10800,"wateringAdjustmentRuntimes":{"1":5860,"2":4883,"3":3906,"4":2930,"5":1953},"runtime":3906},{"id":"5e78b7b7-c0c6-48e4-aab0-2504d4633564","zoneNumber":3,"name":"Zone
+        3","enabled":true,"customNozzle":{"name":"Rotary Nozzle","imageUrl":"https://s3-us-west-2.amazonaws.com/rachio-api-icons/nozzle/rotary_nozzle.png","category":"ROTARY_NOZZLE","inchesPerHour":0.7},"customSoil":{"createDate":1441831272323,"lastUpdateDate":1441831272323,"id":"1f9240e5-ba87-4b88-b828-a5f456f399b7","name":"Loam","imageUrl":"https://s3-us-west-2.amazonaws.com/rachio-api-icons/soil/loam.png","category":"LOAM","infiltrationRate":0.35,"editable":false,"percentAvailableWater":0.7},"customSlope":{"name":"Flat","imageUrl":"https://s3-us-west-2.amazonaws.com/rachio-api-icons/slope/flat.png","variance":"ZERO_THREE","sortOrder":0},"customCrop":{"name":"Cool
+        Season Grass","imageUrl":"https://s3-us-west-2.amazonaws.com/rachio-api-icons/crop/cool_season_grass.png","coefficient":0.7},"customShade":{"name":"Lots
+        of sun","description":"6-8 hours of sun","imageUrl":"https://s3-us-west-2.amazonaws.com/rachio-api-icons/shade/lots_of_sun.png","exposure":1.0},"availableWater":0.17,"rootZoneDepth":6.0,"managementAllowedDepletion":0.5,"efficiency":0.8,"yardAreaSquareFeet":1000,"lastWateredDuration":2703,"lastWateredDate":1462713321102,"scheduleDataModified":false,"fixedRuntime":0,"saturatedDepthOfWater":0.61,"depthOfWater":0.51,"maxRuntime":10800,"wateringAdjustmentRuntimes":{"1":4471,"2":3726,"3":2981,"4":2235,"5":1490},"runtime":2981},{"id":"69c72b55-6418-461d-bd86-1f3eac38dbe2","zoneNumber":2,"name":"Zone
+        2","enabled":true,"customNozzle":{"name":"Emitter","imageUrl":"https://s3-us-west-2.amazonaws.com/rachio-api-icons/nozzle/emitter.png","category":"EMITTER","inchesPerHour":0.5},"customSoil":{"createDate":1441831272323,"lastUpdateDate":1441831272323,"id":"1f9240e5-ba87-4b88-b828-a5f456f399b7","name":"Loam","imageUrl":"https://s3-us-west-2.amazonaws.com/rachio-api-icons/soil/loam.png","category":"LOAM","infiltrationRate":0.35,"editable":false,"percentAvailableWater":0.7},"customSlope":{"name":"Flat","imageUrl":"https://s3-us-west-2.amazonaws.com/rachio-api-icons/slope/flat.png","variance":"ZERO_THREE","sortOrder":0},"customCrop":{"name":"Warm
+        Season Grass","imageUrl":"https://s3-us-west-2.amazonaws.com/rachio-api-icons/crop/warm_season_grass.png","coefficient":0.65},"customShade":{"name":"Lots
+        of sun","description":"6-8 hours of sun","imageUrl":"https://s3-us-west-2.amazonaws.com/rachio-api-icons/shade/lots_of_sun.png","exposure":1.0},"availableWater":0.17,"rootZoneDepth":9.0,"managementAllowedDepletion":0.5,"efficiency":0.9,"yardAreaSquareFeet":1000,"lastWateredDuration":3543,"lastWateredDate":1462710613257,"scheduleDataModified":false,"fixedRuntime":0,"saturatedDepthOfWater":0.92,"depthOfWater":0.77,"maxRuntime":10800,"wateringAdjustmentRuntimes":{"1":8847,"2":7372,"3":5898,"4":4423,"5":2949},"runtime":5898},{"id":"ad9f83be-8a6c-47ad-af40-8300557c3355","zoneNumber":1,"name":"Zone
+        1","enabled":true,"customNozzle":{"name":"Bubbler","imageUrl":"https://s3-us-west-2.amazonaws.com/rachio-api-icons/nozzle/bubbler.png","category":"BUBBLER","inchesPerHour":1.0},"customSoil":{"createDate":1441831272323,"lastUpdateDate":1441831272323,"id":"1f9240e5-ba87-4b88-b828-a5f456f399b7","name":"Loam","imageUrl":"https://s3-us-west-2.amazonaws.com/rachio-api-icons/soil/loam.png","category":"LOAM","infiltrationRate":0.35,"editable":false,"percentAvailableWater":0.7},"customSlope":{"name":"Flat","imageUrl":"https://s3-us-west-2.amazonaws.com/rachio-api-icons/slope/flat.png","variance":"ZERO_THREE","sortOrder":0},"customCrop":{"name":"Cool
+        Season Grass","imageUrl":"https://s3-us-west-2.amazonaws.com/rachio-api-icons/crop/cool_season_grass.png","coefficient":0.7},"customShade":{"name":"Lots
+        of sun","description":"6-8 hours of sun","imageUrl":"https://s3-us-west-2.amazonaws.com/rachio-api-icons/shade/lots_of_sun.png","exposure":1.0},"availableWater":0.17,"rootZoneDepth":6.0,"managementAllowedDepletion":0.5,"efficiency":0.9,"yardAreaSquareFeet":1000,"lastWateredDuration":62,"lastWateredDate":1462826276055,"scheduleDataModified":false,"fixedRuntime":0,"saturatedDepthOfWater":0.61,"depthOfWater":0.51,"maxRuntime":10800,"wateringAdjustmentRuntimes":{"1":2930,"2":2441,"3":1953,"4":1465,"5":977},"runtime":1953},{"id":"5dba747c-ad3e-450e-bf85-5061ca3bdbd5","zoneNumber":5,"name":"Zone
+        5","enabled":true,"customNozzle":{"name":"Mister","imageUrl":"https://s3-us-west-2.amazonaws.com/rachio-api-icons/nozzle/mister.png","category":"MISTER","inchesPerHour":2.0},"customSoil":{"createDate":1441831272323,"lastUpdateDate":1441831272323,"id":"bf0e1c43-302e-431d-9c1a-92175e7c5c12","name":"Sand","imageUrl":"https://s3-us-west-2.amazonaws.com/rachio-api-icons/soil/sand.png","category":"SAND","infiltrationRate":0.6,"editable":false,"percentAvailableWater":1.64},"customSlope":{"name":"Slight","imageUrl":"https://s3-us-west-2.amazonaws.com/rachio-api-icons/slope/slight.png","variance":"FOUR_SIX","sortOrder":0},"customCrop":{"name":"Cool
+        Season Grass","imageUrl":"https://s3-us-west-2.amazonaws.com/rachio-api-icons/crop/cool_season_grass.png","coefficient":0.7},"customShade":{"name":"Mostly
+        shade","description":"2 hours or less of sun","imageUrl":"https://s3-us-west-2.amazonaws.com/rachio-api-icons/shade/mostly_shade.png","exposure":0.71},"availableWater":0.05,"rootZoneDepth":6.0,"managementAllowedDepletion":0.5,"efficiency":0.9,"yardAreaSquareFeet":1000,"lastWateredDuration":62,"lastWateredDate":1462804801943,"scheduleDataModified":false,"fixedRuntime":0,"saturatedDepthOfWater":0.18,"depthOfWater":0.15,"maxRuntime":10800,"wateringAdjustmentRuntimes":{"1":431,"2":359,"3":287,"4":215,"5":144},"runtime":287},{"id":"61197df9-d256-4959-8117-7625f919b2b3","zoneNumber":6,"name":"Zone
+        6","enabled":true,"customNozzle":{"name":"Rotor Head","imageUrl":"https://s3-us-west-2.amazonaws.com/rachio-api-icons/nozzle/rotor_head.png","category":"ROTOR_HEAD","inchesPerHour":1.0},"customSoil":{"createDate":1441831272323,"lastUpdateDate":1441831272323,"id":"1f9240e5-ba87-4b88-b828-a5f456f399b7","name":"Loam","imageUrl":"https://s3-us-west-2.amazonaws.com/rachio-api-icons/soil/loam.png","category":"LOAM","infiltrationRate":0.35,"editable":false,"percentAvailableWater":0.7},"customSlope":{"name":"Flat","imageUrl":"https://s3-us-west-2.amazonaws.com/rachio-api-icons/slope/flat.png","variance":"ZERO_THREE","sortOrder":0},"customCrop":{"name":"Cool
+        Season Grass","imageUrl":"https://s3-us-west-2.amazonaws.com/rachio-api-icons/crop/cool_season_grass.png","coefficient":0.7},"customShade":{"name":"Lots
+        of sun","description":"6-8 hours of sun","imageUrl":"https://s3-us-west-2.amazonaws.com/rachio-api-icons/shade/lots_of_sun.png","exposure":1.0},"availableWater":0.17,"rootZoneDepth":6.0,"managementAllowedDepletion":0.5,"efficiency":0.7,"yardAreaSquareFeet":1000,"lastWateredDuration":11,"lastWateredDate":1462760287489,"scheduleDataModified":false,"fixedRuntime":0,"saturatedDepthOfWater":0.61,"depthOfWater":0.51,"maxRuntime":10800,"wateringAdjustmentRuntimes":{"1":3359,"2":2799,"3":2239,"4":1679,"5":1120},"runtime":2239},{"id":"4f1b562e-1dc3-40d7-acf1-2a1998a47786","zoneNumber":8,"name":"Zone
+        8","enabled":true,"customNozzle":{"name":"Fixed Spray Head","imageUrl":"https://s3-us-west-2.amazonaws.com/rachio-api-icons/nozzle/fixed_spray.png","category":"FIXED_SPRAY_HEAD","inchesPerHour":1.5},"customSoil":{"createDate":1441831272323,"lastUpdateDate":1441831272323,"id":"1f9240e5-ba87-4b88-b828-a5f456f399b7","name":"Loam","imageUrl":"https://s3-us-west-2.amazonaws.com/rachio-api-icons/soil/loam.png","category":"LOAM","infiltrationRate":0.35,"editable":false,"percentAvailableWater":0.7},"customSlope":{"name":"Flat","imageUrl":"https://s3-us-west-2.amazonaws.com/rachio-api-icons/slope/flat.png","variance":"ZERO_THREE","sortOrder":0},"customCrop":{"name":"Cool
+        Season Grass","imageUrl":"https://s3-us-west-2.amazonaws.com/rachio-api-icons/crop/cool_season_grass.png","coefficient":0.7},"customShade":{"name":"Lots
+        of sun","description":"6-8 hours of sun","imageUrl":"https://s3-us-west-2.amazonaws.com/rachio-api-icons/shade/lots_of_sun.png","exposure":1.0},"availableWater":0.17,"rootZoneDepth":6.0,"managementAllowedDepletion":0.5,"efficiency":0.8,"yardAreaSquareFeet":1000,"lastWateredDuration":1264,"lastWateredDate":1462722179959,"scheduleDataModified":false,"fixedRuntime":0,"saturatedDepthOfWater":0.61,"depthOfWater":0.51,"maxRuntime":10800,"wateringAdjustmentRuntimes":{"1":2086,"2":1739,"3":1391,"4":1043,"5":695},"runtime":1391}],"timeZone":"America/Denver","latitude":39.75352,"longitude":-104.9918,"zip":"80205","name":"Rachio
+        Test Device","scheduleRules":[{"id":"138042d5-c12b-48ed-8af0-5c347e4a2bb7","zones":[{"zoneId":"ad9f83be-8a6c-47ad-af40-8300557c3355","zoneNumber":1,"duration":1860,"sortOrder":1},{"zoneId":"4f1b562e-1dc3-40d7-acf1-2a1998a47786","zoneNumber":8,"duration":1260,"sortOrder":8},{"zoneId":"5e78b7b7-c0c6-48e4-aab0-2504d4633564","zoneNumber":3,"duration":2700,"sortOrder":3},{"zoneId":"5dba747c-ad3e-450e-bf85-5061ca3bdbd5","zoneNumber":5,"duration":300,"sortOrder":5},{"zoneId":"61197df9-d256-4959-8117-7625f919b2b3","zoneNumber":6,"duration":1860,"sortOrder":6},{"zoneId":"18a7b4a0-0b46-4096-aefe-569d48954cef","zoneNumber":7,"duration":1860,"sortOrder":7},{"zoneId":"b709ec48-8b6e-44c9-937d-1c1c82376fd2","zoneNumber":4,"duration":3540,"sortOrder":4},{"zoneId":"69c72b55-6418-461d-bd86-1f3eac38dbe2","zoneNumber":2,"duration":3540,"sortOrder":2}],"scheduleJobTypes":["INTERVAL_1"],"summary":"As
+        Needed at 5:00 AM","rainDelay":true,"waterBudget":true,"cycleSoakStatus":"ON","startDate":1462255200000,"name":"Water
+        all zones","enabled":true,"totalDuration":16920,"weatherIntelligenceSensitivity":0.125,"seasonalAdjustment":0.0,"totalDurationNoCycle":16920,"cycles":1,"externalName":"Water
+        all zones","cycleSoak":true},{"id":"68ed3df0-483e-4495-9c01-0944dad66911","zones":[{"zoneId":"61197df9-d256-4959-8117-7625f919b2b3","zoneNumber":6,"duration":300,"sortOrder":4},{"zoneId":"4f1b562e-1dc3-40d7-acf1-2a1998a47786","zoneNumber":8,"duration":300,"sortOrder":5},{"zoneId":"5dba747c-ad3e-450e-bf85-5061ca3bdbd5","zoneNumber":5,"duration":300,"sortOrder":3}],"scheduleJobTypes":["INTERVAL_3"],"summary":"Every
+        3 days at 5:00 am","rainDelay":true,"waterBudget":false,"cycleSoakStatus":"ON","startDate":1451505086480,"name":"Zone
+        5, Zone 6, Zone 8","enabled":false,"totalDuration":900,"weatherIntelligenceSensitivity":0.25,"seasonalAdjustment":0.0,"totalDurationNoCycle":900,"cycles":1,"externalName":"Zone
+        5, Zone 6, Zone 8","cycleSoak":true}],"serialNumber":"V31140320","rainDelayExpirationDate":1462808519000,"rainDelayStartDate":1462788195486,"macAddress":"0C2A690958B1","elevation":1588.32141113281,"webhooks":[],"paused":false,"on":true,"flexScheduleRules":[],"model":"8ZULW","scheduleModeType":"MANUAL","utcOffset":-21600000}],"enabled":true,"roles":[],"managedDevices":[],"displayUnit":"US"}'
+    http_version: 
+  recorded_at: Mon, 09 May 2016 22:12:57 GMT
+recorded_with: VCR 3.0.1

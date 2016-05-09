@@ -12,6 +12,7 @@ class Api::V1::SessionsController < ApplicationController
   end
 
   def destroy
+    current_user.devices.destroy_all
     session[:user_id] = nil
     response.status = 204
     render json: ""
