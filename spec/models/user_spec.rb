@@ -16,7 +16,6 @@ RSpec.describe User, type: :model do
 
       expect(user.devices.count).to eq 0
 
-
       ras = RachioApiService.new(user)
       user.get_or_update_devices(ras)
 
