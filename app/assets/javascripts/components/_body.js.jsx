@@ -3,7 +3,7 @@ var Body = React.createClass({
     this.setState(state);
   },
 
-  loggedIn(){
+  dashboardOrLogin(){
     if(this.props.user){
       return <RachioDashboard
                 user={this.props.user}
@@ -20,7 +20,7 @@ var Body = React.createClass({
   render() {
     return (
       <div>
-        {this.loggedIn()}
+        {this.dashboardOrLogin()}
       </div>
     );
   }

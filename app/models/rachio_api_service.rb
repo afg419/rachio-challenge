@@ -30,14 +30,4 @@ class RachioApiService
     }
     JSON.parse(res.body)
   end
-
-  # def put(path, post_body)
-  #   uri = URI(root_url + path + "/")
-  #   req = Net::HTTP::Post.new(uri, "Authorization" => "Bearer #{api_key}")
-  #   req.body = post_body
-  #   res = Net::HTTP.start(uri.hostname, uri.port) {|http|
-  #     http.request(req)
-  #   }
-  #   JSON.parse(res.body)
-  # end
 end
