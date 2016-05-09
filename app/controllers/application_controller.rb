@@ -12,12 +12,7 @@ class ApplicationController < ActionController::Base
 
   def current_user_dom
     if current_user
-      name = current_user.username
-      {
-        user: {username: name},
-        message: "Logged in as #{name}",
-        legal_api_key: current_users_rachio_api_service.legal_api_key?
-      }
+      current_user.dom_format
     else
       {}
     end

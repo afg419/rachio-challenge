@@ -9,9 +9,14 @@ class User < ActiveRecord::Base
     end
   end
 
-  # def format_device_info
-  #   devices.map do |device|
-  #
-  #   end
-  # end
+  def dom_format
+    dom_devices = devices.map do |device|
+      device.dom_format
+    end
+
+    {
+      user: {username: username, devices: dom_devices},
+      message: "Logged in as #{username}",
+    }
+  end
 end

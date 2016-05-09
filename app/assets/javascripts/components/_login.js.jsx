@@ -7,8 +7,8 @@ var Login = React.createClass({
       type: 'POST',
       data: { user: { username: username, password: password } },
       success: (reply) => {
+        debugger
         this.props.login(reply.user);
-        // this.updateUserInfo();
       },
       error: (reply) => {
         this.props.login(reply);

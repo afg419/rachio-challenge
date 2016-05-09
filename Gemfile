@@ -14,7 +14,6 @@ gem 'react-rails'
 gem 'rails_12factor', group: :production
 
 group :development, :test do
-  gem 'webmock'
   gem 'byebug'
   gem 'mocha'
   gem 'vcr'
@@ -25,6 +24,10 @@ group :development, :test do
   gem 'database_cleaner'
   gem 'selenium-webdriver'
   gem 'shoulda-matchers', '~> 3.1'
+end
+
+group :test do
+  gem 'webmock'
 end
 
 group :development do
