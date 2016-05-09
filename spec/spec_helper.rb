@@ -21,12 +21,18 @@ RSpec.configure do |config|
   # assertion/expectation library such as wrong or the stdlib/minitest
   # assertions if you prefer.
   def login(username, password)
-    User.create(username: username, password: password)
-
     visit root_path
     fill_in("username", with: username)
     fill_in("password", with: password)
     click_on "Login"
+  end
+
+  def make_test_user
+    username = ENV["rachio_test_username"]
+    password = ENV["rachio_test_password"]
+    user = User.create(username: username,
+                password: password,
+                  api_key: ENV["rachio_test_api_key"])
   end
 
   config.expect_with :rspec do |expectations|

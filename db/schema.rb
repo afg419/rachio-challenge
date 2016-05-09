@@ -11,10 +11,22 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160508175824) do
+ActiveRecord::Schema.define(version: 20160509190203) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "devices", force: :cascade do |t|
+    t.string   "rachio_device_id"
+    t.string   "status"
+    t.boolean  "on"
+    t.string   "name"
+    t.integer  "user_id"
+    t.datetime "created_at",       null: false
+    t.datetime "updated_at",       null: false
+  end
+
+  add_index "devices", ["user_id"], name: "index_devices_on_user_id", using: :btree
 
   create_table "users", force: :cascade do |t|
     t.string   "username"
@@ -22,6 +34,21 @@ ActiveRecord::Schema.define(version: 20160508175824) do
     t.string   "api_key"
     t.datetime "created_at",      null: false
     t.datetime "updated_at",      null: false
+    t.string   "rachio_id"
   end
 
+  create_table "zones", force: :cascade do |t|
+    t.string   "rachio_zone_id"
+    t.integer  "zone_number"
+    t.string   "name"
+    t.boolean  "enabled"
+    t.integer  "device_id"
+    t.datetime "created_at",     null: false
+    t.datetime "updated_at",     null: false
+  end
+
+  add_index "zones", ["device_id"], name: "index_zones_on_device_id", using: :btree
+
+  add_foreign_key "devices", "users"
+  add_foreign_key "zones", "devices"
 end

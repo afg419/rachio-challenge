@@ -1,25 +1,26 @@
 var Body = React.createClass({
-  getInitialState(){
-    return {message: ""};
-  },
-
   setBodyState(state){
     this.setState(state);
   },
 
-  loggedIn(){
+  dashboardOrLogin(){
     if(this.props.user){
-      return <RachioDashboard logout={this.props.logout}/>;
+      return <RachioDashboard
+                user={this.props.user}
+                logout={this.props.logout}
+             />;
     } else {
-      return <Login login={this.props.login} setBodyState={this.setBodyState}/>;
+      return <Login
+                login={this.props.login}
+                setBodyState={this.setBodyState}
+             />;
     }
   },
 
   render() {
     return (
       <div>
-        {this.state.message}
-        {this.loggedIn()}
+        {this.dashboardOrLogin()}
       </div>
     );
   }

@@ -3,17 +3,13 @@ var Main = React.createClass({
     return {user: this.props.user, message: this.props.message};
   },
 
-  componentWillMount(){
-
-  },
-
   logout(){
     this.setState({user: undefined, message: "Logged out"});
   },
 
   login(user){
     if(user.username){
-      this.setState({user: {username: user.username}, message: "Logged in as " + user.username});
+      this.setState({user: user, message: "Logged in as " + user.username});
     } else {
       this.setState({message: user.responseText});
     }
@@ -23,7 +19,11 @@ var Main = React.createClass({
     return (
       <div>
         <Header message={this.state.message}/>
-        <Body logout={this.logout} login={this.login} user={this.state.user}/>
+        <Body
+          logout={this.logout}
+          login={this.login}
+          user={this.state.user}
+        />
       </div>
     );
   }
