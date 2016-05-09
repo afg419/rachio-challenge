@@ -8,7 +8,7 @@ var Login = React.createClass({
       data: { user: { username: username, password: password } },
       success: (reply) => {
         this.props.login(reply.user);
-        this.updateUserInfo();
+        // this.updateUserInfo();
       },
       error: (reply) => {
         this.props.login(reply);
@@ -16,18 +16,18 @@ var Login = React.createClass({
     });
   },
 
-  updateUserInfo(){
-    $.ajax({
-      url: '/api/v1/user',
-      type: 'GET',
-      success: (reply) => {
-        this.props.login(reply.user);
-      },
-      error: (reply) => {
-        this.props.login(reply);
-      }
-    });
-  },
+  // updateUserInfo(){
+  //   $.ajax({
+  //     url: '/api/v1/user',
+  //     type: 'GET',
+  //     success: (reply) => {
+  //       this.props.login(reply.user);
+  //     },
+  //     error: (reply) => {
+  //       this.props.login(reply);
+  //     }
+  //   });
+  // },
 
   render() {
     return (

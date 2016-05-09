@@ -9,12 +9,17 @@ class RachioApiService
   end
 
   def get_or_update_user_rachio_id
-    user.update_attribute(:rachio_id, get("/person/info")["id"])
+    user.rachio_id = get("/person/info")["id"]
+    user.save
     user.rachio_id
   end
 
   def get_user_devices
     get("/person/#{user_rachio_id}")["devices"]
+  end
+
+  def legal_api_key?
+    user_rachio_id
   end
 
   def get(path)

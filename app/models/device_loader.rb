@@ -1,5 +1,8 @@
 module DeviceLoader
-  def load_devices(user, devices_json)
+  def load_devices(rachio_api_service)
+    devices_json = rachio_api_service.get_user_devices
+    user = rachio_api_service.user
+    binding.pry
     devices_json.each do |device|
       db_device = user.devices.find_or_create_by(rachio_device_id: device["id"])
       db_device.status = device["status"]
@@ -12,7 +15,8 @@ module DeviceLoader
 
   def load_zones(db_device, zones_json)
     zones_json.each do |zone|
-      db_zone = db_device.find_or_create_by(rachio_zone_id: zone["id"])
+      db_zone = db_device.zones.find_or_create_by(rachio_zone_id: zone["id"])
+      binding.pry
       db_zone.zone_number = zone["zoneNumber"]
       db_zone.name = zone["name"]
       db_zone.enabled = zone["enabled"]

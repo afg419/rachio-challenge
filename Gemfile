@@ -14,6 +14,7 @@ gem 'react-rails'
 gem 'rails_12factor', group: :production
 
 group :development, :test do
+  gem 'webmock'
   gem 'byebug'
   gem 'mocha'
   gem 'vcr'
