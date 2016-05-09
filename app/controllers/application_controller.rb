@@ -6,8 +6,8 @@ class ApplicationController < ActionController::Base
     User.find(session[:user_id]) if session[:user_id]
   end
 
-  def rachio_api_service
-    RachioApiService.new(current_user.api_key) if current_user
+  def current_users_rachio_api_service
+    RachioApiService.new(current_user) if current_user
   end
 
   def current_user_dom

@@ -3,10 +3,6 @@ var Main = React.createClass({
     return {user: this.props.user, message: this.props.message};
   },
 
-  componentWillMount(){
-
-  },
-
   logout(){
     this.setState({user: undefined, message: "Logged out"});
   },
