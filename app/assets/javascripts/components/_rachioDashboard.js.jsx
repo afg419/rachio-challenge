@@ -4,7 +4,7 @@ var RachioDashboard = React.createClass({
   },
 
   createDeviceComponents(user){
-    return user.devices.map((device) => {
+    return user.devices.map( device => {
       return <Device key={device.rachio_device_id} device={device}/>;
     });
   },

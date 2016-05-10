@@ -9,8 +9,8 @@ var Login = React.createClass({
       success: (reply) => {
         this.props.login(reply.user);
       },
-      error: (reply) => {
-        this.props.login(reply);
+      error: (error) => {
+        this.props.login(error);
       }
     });
   },
@@ -19,7 +19,7 @@ var Login = React.createClass({
     return (
       <div className="login container">
         <input name='username' ref='username' placeholder='Rachio username' />
-        <input name='password' ref='password' placeholder='password' />
+        <input name='password' type="password" ref='password' placeholder='password' />
         <button onClick={this.handleLogin}>Login</button>
       </div>
     );
