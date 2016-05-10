@@ -22,6 +22,7 @@ var Zone = React.createClass({
   },
 
   run(){
+    stop_spins(this.props.zone.rachio_zone_id);
     this.setState({
                      activeButton: true,
                           seconds: this.state.selectedToRun,
@@ -35,9 +36,19 @@ var Zone = React.createClass({
 
   startButton(){
     if(this.state.activeButton){
-      return(<button onClick={() => this.handleZoneStart(true)}>Run this zone?</button>);
+      return(
+        <div>
+          <input type='number' min='0' name='duration' ref='duration' placeholder='seconds' />
+          <button onClick={() => this.handleZoneStart(true)}>Run this zone?</button>
+        </div>
+      );
     } else {
-      return(<button onClick={() => this.handleZoneStart(false)}>Ready to run!</button>);
+      return(
+        <div>
+          <input type='number' min='0' name='duration' ref='duration' placeholder='seconds' readOnly/>
+          <button onClick={() => this.handleZoneStart(false)}>Ready to run!</button>
+        </div>
+      );
     }
   },
 
@@ -56,8 +67,7 @@ var Zone = React.createClass({
         {this.props.zone.name}
         <div>Seconds remaining: {this.state.seconds}</div>
         <div>How many seconds would you like to run this zone? </div>
-        <input type='number' min='0' name='duration' ref='duration' placeholder='seconds' />
-        {this.startButton()} {this.state.message}
+        {this.startButton()} {this.state.message}<div id={this.props.zone.rachio_zone_id}></div>
       </div>
     );
   }

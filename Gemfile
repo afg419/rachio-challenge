@@ -9,6 +9,7 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 gem 'bcrypt', '~> 3.1.7'
 gem 'figaro'
 gem 'pg'
+gem 'browserify-rails'
 gem 'thin'
 gem 'react-rails'
 gem 'rails_12factor', group: :production

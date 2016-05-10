@@ -43,6 +43,11 @@ var Device = React.createClass({
 
   startSelectedZones(){
     var selected = this.selectedZones();
+    selected.forEach( zone => {
+      debugger
+      make_it_spin(zone.props.zone.rachio_zone_id);
+    });
+
     $.ajax({
       url: '/api/v1/devices/' + this.props.device.rachio_device_id,
       type: 'PUT',
