@@ -17,7 +17,7 @@ var Login = React.createClass({
 
   render() {
     return (
-      <div>
+      <div className="login container">
         <input name='username' ref='username' placeholder='Rachio username' />
         <input name='password' ref='password' placeholder='password' />
         <button onClick={this.handleLogin}>Login</button>

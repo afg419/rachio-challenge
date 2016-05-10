@@ -10,11 +10,12 @@ var Zone = React.createClass({
 
   handleZoneStart(bool){
     duration = this.refs.duration.value;
-    if(bool && 0 < duration && duration < 18000){
+    maxDuration = 10800;
+    if(bool && 0 < duration && duration < maxDuration){
       this.setState({selectedToRun: duration, message: ""});
       this.toggleButtonActive(!bool);
     } else if (bool){
-      this.setState({message: "Sorry, please enter a value between 0 and 18000 seconds"});
+      this.setState({message: `Sorry, please enter a value between 0 and ${maxDuration} seconds`});
     } else {
       this.setState({selectedToRun: bool, message: ""});
       this.toggleButtonActive(!bool);
