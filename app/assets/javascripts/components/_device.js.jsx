@@ -13,7 +13,6 @@ var Device = React.createClass({
       this.state.zones.forEach( zone => {
         zoneComp = deviceComp.refs[zone.props.zone.zoneNumber];
         zoneComp.decrementSeconds();
-        zoneComp.setState({message: ""});
       });
     }, 1000);
   },

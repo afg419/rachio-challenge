@@ -7,6 +7,7 @@ var Zone = React.createClass({
     duration = this.refs.duration.value;
     if(0 < duration && duration < 18000){
       this.startZone(duration);
+      this.setState({message: ""});
     } else {
       this.setState({message: "Sorry, please enter a value between 0 and 18000 seconds"});
     }
@@ -26,13 +27,6 @@ var Zone = React.createClass({
 
   initCountdown(duration){
     this.setState({seconds: duration});
-    // interval = setInterval(() => {
-    //   this.setState({seconds: this.state.seconds - 1});
-    //   if(this.state.seconds === 0){
-    //     clearInterval(interval);
-    //     this.setState({seconds: "not currently running"});
-    //   }
-    // }, 1000);
   },
 
   decrementSeconds(){
@@ -51,7 +45,6 @@ var Zone = React.createClass({
       data: { duration: duration },
       success: (reply) => {
         this.toggleButtonActive(true);
-        this.setState({message: "Successfully started!"});
         this.initCountdown(duration);
       },
       error: (reply) => {
