@@ -1,0 +1,70 @@
+.logout{
+  margin-left: 80%;
+  font-size: large;
+}
+
+.login{
+  text-align: center;
+  font-size: large;
+  background-color:#83BDD0;
+  padding:20px;
+  border-radius:22px;
+  border-style: solid;
+  max-width: 50%;
+}
+
+
+.header{
+  text-align: center;
+}
+
+.device{
+  background-color: rgb(225,225,225);
+  padding: 35px;
+  border-radius: 22px;
+  border-style: solid;
+  max-width: 42%;
+  margin-left: 35px;
+}
+
+.device-name{
+  font-weight: bold;
+}
+
+.start-zones{
+  font-size: larger;
+}
+
+.zone{
+  margin-top: 25px;
+  border-radius: 13px;
+  border-color: black;
+  border-style: solid;
+  padding: 10px;
+  min-width: 200px;
+}
+
+.selected-true{
+  background-color: #83BDD0;
+}
+
+.selected-false{
+  background-color: #6BAB8B;
+}
+
+.counter{
+  color: white;
+  font-weight: bolder;
+}
+
+.duration-input-active{
+  background-color: rgb(220,220,220);
+}
+
+.duration-input-inactive{
+  background-color: rgb(175,175,175);
+}
+
+.vertical-buffer{
+  min-height: 30px;
+}

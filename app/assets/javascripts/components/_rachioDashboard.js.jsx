@@ -25,8 +25,9 @@ var RachioDashboard = React.createClass({
   render() {
     return (
       <div>
+        <button className='logout' onClick={this.handleLogout}>Logout</button>
         {this.state.devices}
-        <button onClick={this.handleLogout}>Logout</button>
+        <div className='vertical-buffer'></div>
       </div>
     );
   }
