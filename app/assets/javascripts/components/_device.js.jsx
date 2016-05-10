@@ -3,9 +3,24 @@ var Device = React.createClass({
     return {zones: this.createZoneComponents(this.props.device)};
   },
 
+  componentDidMount(){
+    this.timer();
+  },
+
+  timer(){
+    var deviceComp = this;
+    setInterval(() => {
+      this.state.zones.forEach( zone => {
+        zoneComp = deviceComp.refs[zone.props.zone.zoneNumber];
+        zoneComp.decrementSeconds();
+        zoneComp.setState({message: ""});
+      });
+    }, 1000);
+  },
+
   createZoneComponents(device){
     return device.zones.map((zone) => {
-      return <Zone key={zone.rachio_zone_id} zone={zone}/>;
+      return <Zone ref={zone.zoneNumber} key={zone.rachio_zone_id} zone={zone}/>;
     });
   },
 

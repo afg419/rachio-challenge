@@ -24,6 +24,25 @@ var Zone = React.createClass({
     }
   },
 
+  initCountdown(duration){
+    this.setState({seconds: duration});
+    // interval = setInterval(() => {
+    //   this.setState({seconds: this.state.seconds - 1});
+    //   if(this.state.seconds === 0){
+    //     clearInterval(interval);
+    //     this.setState({seconds: "not currently running"});
+    //   }
+    // }, 1000);
+  },
+
+  decrementSeconds(){
+    if(this.state.seconds > 0){
+      this.setState({seconds: this.state.seconds - 1});
+    } else if (this.state.seconds !== "not currently running"){
+      this.setState({seconds: "not currently running"});
+    }
+  },
+
   startZone(duration){
     this.toggleButtonActive(false);
     $.ajax({
@@ -33,7 +52,7 @@ var Zone = React.createClass({
       success: (reply) => {
         this.toggleButtonActive(true);
         this.setState({message: "Successfully started!"});
-        // this.startCounter(duration);
+        this.initCountdown(duration);
       },
       error: (reply) => {
         console.log("Something went wrong...");
@@ -45,7 +64,7 @@ var Zone = React.createClass({
     return (
       <div>
         {this.props.zone.name}
-        <div>{this.state.seconds}</div>
+        <div>Seconds remaining: {this.state.seconds}</div>
         <div>How many seconds would you like to run this zone? </div>
         <input type='number' min='0' name='duration' ref='duration' placeholder='seconds' />
         {this.startButton()} {this.state.message}
