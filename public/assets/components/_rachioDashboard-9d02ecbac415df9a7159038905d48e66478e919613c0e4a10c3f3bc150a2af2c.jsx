@@ -10,13 +10,12 @@ var RachioDashboard = React.createClass({
   },
 
   handleLogout(){
-    var dash = this;
     $.ajax({
       url: '/api/v1/login',
       type: 'DELETE',
       success: (reply) => {
-        dash.props.logout();
-      },
+        this.props.logout();
+      }.bind(this),
       error: (reply) => {
         console.log(reply);
       }
