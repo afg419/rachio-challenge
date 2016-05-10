@@ -10,9 +10,8 @@ var Device = React.createClass({
   timer(){
     var deviceComp = this;
     setInterval(() => {
-      this.state.zones.forEach( zone => {
-        zoneComp = deviceComp.refs[zone.props.zone.zoneNumber];
-        zoneComp.decrementSeconds();
+      deviceComp.zoneObjects().forEach(zone =>{
+        zone.decrementSeconds();
       });
     }, 1000);
   },
@@ -23,10 +22,47 @@ var Device = React.createClass({
     });
   },
 
+  zoneObjects(){
+    var deviceComp = this;
+    return this.state.zones.map( zone => {
+      return deviceComp.refs[zone.props.zone.zoneNumber];
+    });
+  },
+
+  selectedZones(){
+    return this.zoneObjects().filter( zone => {
+      return zone.state.selectedToRun;
+    });
+  },
+
+  selectedZonesAPIParams(){
+    return this.selectedZones().map( (zone, ind) => {
+      return {"id": zone.props.zone.rachio_zone_id, "duration": zone.state.selectedToRun, "sortOrder": ind + 1};
+    });
+  },
+
+  startSelectedZones(){
+    var selected = this.selectedZones();
+    $.ajax({
+      url: '/api/v1/devices/' + this.props.device.rachio_device_id,
+      type: 'PUT',
+      data: { zones: this.selectedZonesAPIParams() },
+      success: (reply) => {
+        selected.forEach( zone => {
+          zone.run();
+        });
+      },
+      error: (reply) => {
+        console.log("Something went wrong...");
+      }
+    });
+  },
+
   render() {
     return (
       <div>
         <h3>Device ID {this.props.device.rachio_device_id}</h3>
+        <button onClick={this.startSelectedZones}>Start selected zones!</button>
         {this.state.zones}
       </div>
     );

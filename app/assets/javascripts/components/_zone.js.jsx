@@ -1,16 +1,32 @@
 var Zone = React.createClass({
   getInitialState(){
-    return {seconds: "not currently running", message: "", activeButton: true};
+    return {
+            seconds: "not currently running",
+            message: "",
+       activeButton: true,
+      selectedToRun: false
+    };
   },
 
-  handleZoneStart(){
+  handleZoneStart(bool){
     duration = this.refs.duration.value;
-    if(0 < duration && duration < 18000){
-      this.startZone(duration);
-      this.setState({message: ""});
-    } else {
+    if(bool && 0 < duration && duration < 18000){
+      this.setState({selectedToRun: duration, message: ""});
+      this.toggleButtonActive(!bool);
+    } else if (bool){
       this.setState({message: "Sorry, please enter a value between 0 and 18000 seconds"});
+    } else {
+      this.setState({selectedToRun: bool, message: ""});
+      this.toggleButtonActive(!bool);
     }
+  },
+
+  run(){
+    this.setState({
+                     activeButton: true,
+                          seconds: this.state.selectedToRun,
+                    selectedToRun: false
+                  });
   },
 
   toggleButtonActive(bool){
@@ -19,14 +35,10 @@ var Zone = React.createClass({
 
   startButton(){
     if(this.state.activeButton){
-      return(<button onClick={this.handleZoneStart}>Start</button>);
+      return(<button onClick={() => this.handleZoneStart(true)}>Run this zone?</button>);
     } else {
-      return(<button disabled>Starting up...</button>);
+      return(<button onClick={() => this.handleZoneStart(false)}>Ready to run!</button>);
     }
-  },
-
-  initCountdown(duration){
-    this.setState({seconds: duration});
   },
 
   decrementSeconds(){
@@ -37,21 +49,6 @@ var Zone = React.createClass({
     }
   },
 
-  startZone(duration){
-    this.toggleButtonActive(false);
-    $.ajax({
-      url: '/api/v1/zones/' + this.props.zone.rachio_zone_id,
-      type: 'PUT',
-      data: { duration: duration },
-      success: (reply) => {
-        this.toggleButtonActive(true);
-        this.initCountdown(duration);
-      },
-      error: (reply) => {
-        console.log("Something went wrong...");
-      }
-    });
-  },
 
   render() {
     return (

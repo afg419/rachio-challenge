@@ -7,6 +7,7 @@ Rails.application.routes.draw do
       delete 'login' => 'sessions#destroy'
       resource :user, only: [:show]
       resources :zones, only: [:update]
+      resources :devices, only: [:update]
     end
   end
 end
