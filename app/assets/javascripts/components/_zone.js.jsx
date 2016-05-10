@@ -8,10 +8,23 @@ var Zone = React.createClass({
     };
   },
 
-  handleZoneStart(bool){
-    duration = this.refs.duration.value;
+
+  decrementSeconds(){
+    if(this.state.seconds > 0){
+      this.setState({seconds: this.state.seconds - 1});
+    } else if (this.state.seconds !== "not currently running"){
+      this.setState({seconds: "not currently running"});
+    }
+  },
+
+  startingAndWithinAcceptableRange(bool){
     maxDuration = 10800;
-    if(bool && 0 < duration && duration < maxDuration){
+    duration = this.refs.duration.value;
+    return bool && 0 < duration && duration < maxDuration;
+  },
+
+  handleZoneStart(bool){
+    if(this.startingAndWithinAcceptableRange(bool)){
       this.setState({selectedToRun: duration, message: ""});
       this.toggleButtonActive(!bool);
     } else if (bool){
@@ -47,7 +60,9 @@ var Zone = React.createClass({
             ref='duration'
             placeholder='seconds'
           />
-          <button name='runZone' onClick={() => this.handleZoneStart(true)}>Run this zone?</button>
+          <button name='runZone' onClick={() => this.handleZoneStart(true)}>
+            Run this zone.
+          </button>
         </div>
       );
     } else {
@@ -61,26 +76,25 @@ var Zone = React.createClass({
             ref='duration'
             placeholder='seconds' readOnly
           />
-          <button onClick={() => this.handleZoneStart(false)}>Ready to run!</button>
+          <button onClick={() => this.handleZoneStart(false)}>
+            Ready to run!
+          </button>
         </div>
       );
     }
   },
 
-  decrementSeconds(){
-    if(this.state.seconds > 0){
-      this.setState({seconds: this.state.seconds - 1});
-    } else if (this.state.seconds !== "not currently running"){
-      this.setState({seconds: "not currently running"});
-    }
-  },
-
-
   render() {
+    var className = "zone-" + this.props.zone.zoneNumber + " container" +
+    " zone selected-" + this.state.activeButton;
+
     return (
-      <div className={"zone-" + this.props.zone.zoneNumber + " container"+ " zone selected-" + this.state.activeButton}>
+      <div className={className}>
         <h5>{this.props.zone.name}</h5>
-        <div>Seconds remaining: <span className="counter">{this.state.seconds}</span></div><div id={this.props.zone.rachio_zone_id}></div>
+        <div>
+          Seconds remaining: <span className="counter">{this.state.seconds}</span>
+        </div>
+        <div id={this.props.zone.rachio_zone_id}></div>
         <div>How many seconds would you like to run this zone? </div>
         {this.startButton()} {this.state.message}
       </div>

@@ -10,7 +10,7 @@ var Device = React.createClass({
   timer(){
     var deviceComp = this;
     setInterval(() => {
-      deviceComp.zoneObjects().forEach(zone =>{
+      deviceComp.zoneObjects().forEach( zone => {
         zone.decrementSeconds();
         localStorage.setItem(zone.props.zone.rachio_zone_id, zone.state.seconds);
       });
@@ -18,15 +18,18 @@ var Device = React.createClass({
   },
 
   createZoneComponents(device){
-    return device.zones.map((zone) => {
+    return device.zones.map( zone => {
       return <Zone ref={zone.zoneNumber} key={zone.rachio_zone_id} zone={zone}/>;
+    }).sort( (z1, z2) => {
+      return z1.props.zone.zoneNumber - z2.props.zone.zoneNumber;
     });
   },
 
   zoneObjects(){
     var deviceComp = this;
     return this.state.zones.map( zone => {
-      return deviceComp.refs[zone.props.zone.zoneNumber];
+      var zoneNumber = zone.props.zone.zoneNumber;
+      return deviceComp.refs[zoneNumber];
     });
   },
 
