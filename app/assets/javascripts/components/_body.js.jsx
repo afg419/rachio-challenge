@@ -1,8 +1,4 @@
 var Body = React.createClass({
-  setBodyState(state){
-    this.setState(state);
-  },
-
   dashboardOrLogin(){
     if(this.props.user){
       return <RachioDashboard

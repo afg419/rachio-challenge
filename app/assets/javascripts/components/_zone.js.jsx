@@ -1,7 +1,7 @@
 var Zone = React.createClass({
   getInitialState(){
     return {
-            seconds: "not currently running",
+            seconds: localStorage.getItem(this.props.zone.rachio_zone_id) || "not currently running",
             message: "",
        activeButton: true,
       selectedToRun: false
@@ -38,14 +38,28 @@ var Zone = React.createClass({
     if(this.state.activeButton){
       return(
         <div>
-          <input type='number' min='0' name='duration' ref='duration' placeholder='seconds' />
-          <button onClick={() => this.handleZoneStart(true)}>Run this zone?</button>
+          <input
+            className='duration-input-active'
+            type='number'
+            min='0'
+            name='duration'
+            ref='duration'
+            placeholder='seconds'
+          />
+          <button name='runZone' onClick={() => this.handleZoneStart(true)}>Run this zone?</button>
         </div>
       );
     } else {
       return(
         <div>
-          <input type='number' min='0' name='duration' ref='duration' placeholder='seconds' readOnly/>
+          <input
+            className='duration-input-inactive'
+            type='number'
+            min='0'
+            name='duration'
+            ref='duration'
+            placeholder='seconds' readOnly
+          />
           <button onClick={() => this.handleZoneStart(false)}>Ready to run!</button>
         </div>
       );
@@ -63,11 +77,11 @@ var Zone = React.createClass({
 
   render() {
     return (
-      <div>
-        {this.props.zone.name}
-        <div>Seconds remaining: {this.state.seconds}</div>
+      <div className={"zone-" + this.props.zone.zoneNumber + " container"+ " zone selected-" + this.state.activeButton}>
+        <h5>{this.props.zone.name}</h5>
+        <div>Seconds remaining: <span className="counter">{this.state.seconds}</span></div><div id={this.props.zone.rachio_zone_id}></div>
         <div>How many seconds would you like to run this zone? </div>
-        {this.startButton()} {this.state.message}<div id={this.props.zone.rachio_zone_id}></div>
+        {this.startButton()} {this.state.message}
       </div>
     );
   }

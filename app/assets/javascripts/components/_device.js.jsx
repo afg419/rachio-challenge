@@ -12,6 +12,7 @@ var Device = React.createClass({
     setInterval(() => {
       deviceComp.zoneObjects().forEach(zone =>{
         zone.decrementSeconds();
+        localStorage.setItem(zone.props.zone.rachio_zone_id, zone.state.seconds);
       });
     }, 1000);
   },
@@ -44,7 +45,6 @@ var Device = React.createClass({
   startSelectedZones(){
     var selected = this.selectedZones();
     selected.forEach( zone => {
-      debugger
       make_it_spin(zone.props.zone.rachio_zone_id);
     });
 
@@ -65,9 +65,9 @@ var Device = React.createClass({
 
   render() {
     return (
-      <div>
-        <h3>Device ID {this.props.device.rachio_device_id}</h3>
-        <button onClick={this.startSelectedZones}>Start selected zones!</button>
+      <div className="device container">
+        <h4 className="device-name">Device ID {this.props.device.rachio_device_id}</h4>
+        <button className="start-zones" name='startZones' onClick={this.startSelectedZones}>Start selected zones!</button>
         {this.state.zones}
       </div>
     );
