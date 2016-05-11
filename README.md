@@ -2,11 +2,11 @@
 
 ### This app allows a registered user to control their Rachio devices' zones.  Users can select zones from their devices, specify a duration to run, and initiate them all at once or in sequence.  Counters indicate how much longer the zones will run.
 
-![Imgur](http://imgur.com/qFY5BGr)
+![](http://imgur.com/qFY5BGr.png)
 
 ### Test Suite
 
-![Imgur](http://imgur.com/8frggMb)
+![](http://imgur.com/8frggMb.png)
 
 ### To run locally...  
 Clone this repo:  
