@@ -1,7 +1,8 @@
-# This file should contain all the record creation needed to seed the database with its default values.
-# The data can then be loaded with the rake db:seed (or created alongside the db with db:setup).
-#
-# Examples:
-#
-#   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
-#   Mayor.create(name: 'Emanuel', city: cities.first)
+
+def seed_test_user
+  User.create(username: ENV["rachio_test_username"],
+  password: ENV["rachio_test_password"],
+  api_key: ENV["rachio_test_api_key"])
+end
+
+seed_test_user
